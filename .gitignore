@@ -1,0 +1,17 @@
+.idea
+out/
+*.iml
+
+# Gradle
+.gradle
+build
+!gradle-wrapper.jar
+local.build.gradle
+.settings
+.project
+.classpath
+*.swp
+conf
+bin
+classes
+.DS_Store
