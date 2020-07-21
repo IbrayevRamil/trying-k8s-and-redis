@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: university
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: university
+  template:
+    metadata:
+      labels:
+        app: university
+    spec:
+      containers:
+        - name: app
+          image: ramilkz/university:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: REDIS_URL
+              value: redis://redis:6379/
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: university
+spec:
+  selector:
+    app: university
+  ports:
+    - port: 8081
+      targetPort: 8080
+  type: LoadBalancer

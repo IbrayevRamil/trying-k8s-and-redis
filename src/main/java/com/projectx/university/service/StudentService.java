@@ -1,8 +1,8 @@
-package com.projectx.student.service;
+package com.projectx.university.service;
 
-import com.projectx.student.dto.CreationOutput;
-import com.projectx.student.dto.Student;
-import com.projectx.student.repository.StudentRepository;
+import com.projectx.university.dto.CreationOutput;
+import com.projectx.university.dto.Student;
+import com.projectx.university.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;

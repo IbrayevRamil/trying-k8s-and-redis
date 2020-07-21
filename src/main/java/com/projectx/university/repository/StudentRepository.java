@@ -1,6 +1,6 @@
-package com.projectx.student.repository;
+package com.projectx.university.repository;
 
-import com.projectx.student.dto.Student;
+import com.projectx.university.dto.Student;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.ReactiveRedisOperations;
 import org.springframework.stereotype.Repository;

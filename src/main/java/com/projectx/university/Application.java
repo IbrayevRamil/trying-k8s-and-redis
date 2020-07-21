@@ -1,4 +1,4 @@
-package com.projectx.student;
+package com.projectx.university;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,7 +1,6 @@
-package com.projectx.student.config;
+package com.projectx.university.config;
 
-import com.projectx.student.dto.Student;
-import lombok.RequiredArgsConstructor;
+import com.projectx.university.dto.Student;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.ReactiveRedisConnectionFactory;

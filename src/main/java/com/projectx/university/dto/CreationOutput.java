@@ -1,4 +1,4 @@
-package com.projectx.student.dto;
+package com.projectx.university.dto;
 
 import lombok.Value;
 

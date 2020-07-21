@@ -1,6 +1,6 @@
-package com.projectx.student.config;
+package com.projectx.university.config;
 
-import com.projectx.student.handler.StudentHandler;
+import com.projectx.university.handler.StudentHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
@@ -14,7 +14,7 @@ public class RouterConfiguration {
     public RouterFunction<ServerResponse> changeTrackingRouter(StudentHandler studentHandler) {
         return route()
                 .GET("/api/student/{id}", studentHandler::getStudent)
-                .POST("/api/student/", studentHandler::createStudent)
+                .POST("/api/student/", studentHandler::addStudent)
                 .build();
     }
 }

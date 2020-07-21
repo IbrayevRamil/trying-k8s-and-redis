@@ -1,6 +1,6 @@
-package com.projectx.student.repository
+package com.projectx.university.repository
 
-import com.projectx.student.dto.Student
+import com.projectx.university.dto.Student
 import org.springframework.data.redis.core.ReactiveRedisOperations
 import org.springframework.data.redis.core.ReactiveValueOperations
 import reactor.core.publisher.Mono
@@ -42,5 +42,22 @@ class StudentRepositoryTest extends Specification {
     }
 
     void 'getStudent should get correct student'() {
+        given:
+        final student = Student.builder()
+                .id('testId')
+                .name('testName')
+                .build()
+
+        when:
+        final result = sut.getStudent('testId')
+
+        then:
+        1 * redisTemplateMock.opsForValue() >> redisOperationsMock
+        1 * redisOperationsMock.get('testId') >> Mono.just(student)
+
+        and:
+        StepVerifier.create(result)
+                .expectNext(student)
+                .verifyComplete()
     }
 }
