@@ -6,6 +6,7 @@ import com.projectx.university.repository.StudentRepository
 import io.mockk.clearAllMocks
 import io.mockk.every
 import io.mockk.mockk
+import io.mockk.verify
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
@@ -37,6 +38,8 @@ internal class StudentServiceTest {
         StepVerifier.create(result)
                 .expectNext(CreationOutput(true))
                 .verifyComplete()
+
+        verify(atMost = 1) { studentRepositoryMock.addStudent(student) }
     }
 
     @Test
@@ -53,5 +56,7 @@ internal class StudentServiceTest {
         StepVerifier.create(result)
                 .expectNext(expectedStudent)
                 .verifyComplete()
+
+        verify(atMost = 1) { studentRepositoryMock.getStudent(studentId) }
     }
 }
