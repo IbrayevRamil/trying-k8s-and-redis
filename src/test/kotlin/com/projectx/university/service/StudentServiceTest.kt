@@ -21,7 +21,7 @@ internal class StudentServiceTest {
     private val sut: StudentService = StudentService(studentRepositoryMock)
 
     @BeforeEach
-    fun init() {
+    fun setUp() {
         clearAllMocks()
     }
 
@@ -39,7 +39,7 @@ internal class StudentServiceTest {
                 .expectNext(CreationOutput(true))
                 .verifyComplete()
 
-        verify(atMost = 1) { studentRepositoryMock.addStudent(student) }
+        verify(exactly = 1) { studentRepositoryMock.addStudent(student) }
     }
 
     @Test
@@ -57,6 +57,6 @@ internal class StudentServiceTest {
                 .expectNext(expectedStudent)
                 .verifyComplete()
 
-        verify(atMost = 1) { studentRepositoryMock.getStudent(studentId) }
+        verify(exactly = 1) { studentRepositoryMock.getStudent(studentId) }
     }
 }
