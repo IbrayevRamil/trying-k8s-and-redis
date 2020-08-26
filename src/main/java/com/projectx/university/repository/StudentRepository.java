@@ -19,3 +19,5 @@ public class StudentRepository {
         return redisTemplate.opsForValue().get(studentId);
     }
 }
+
+
