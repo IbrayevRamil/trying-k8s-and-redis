@@ -34,3 +34,4 @@ public class StudentHandler {
                 .flatMap(result -> ok().bodyValue(result));
     }
 }
+
